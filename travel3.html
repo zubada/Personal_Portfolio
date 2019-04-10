@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang='en' class='abouthtml'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Portfolio</title> 
+    <link rel="stylesheet" type="text/css" href="css/common.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+</head>
+<body class='commonbody'>
+    <a class="skip-main" href="#noskip">Skip to main content</a>
+  <header>
+    <div class="navbar">
+        <div>
+            <a href="homepage.html">HOME</a>
+        </div>
+        <div>
+            <a href="study.html" >MY LIFE</a>
+        </div>
+        <div>
+            <a href="travel.html" id='currentp'>MY TRAVELS</a>
+        </div>
+        <div>
+            <a href="food.html">FAVORITE FOOD</a>
+        </div>
+        <div>
+          <a href="projects.html">PROGRAMMING PROJECTS</a>
+        </div> 
+        <div>
+          <a href="contact.html">CONTACT ME</a>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="travel.html" id="light_black1">Penghu, Taiwan</a>
+        <a href="travel2.html" id="light_black2">Chiacgo, IL, US</a>
+        <a href="travel3.html" id="light_black3">Northern Michigan, US</a>
+        <a href="travel4.html" id="light_black4">Baffalo, NY, US</a>
+        <a href="travel5.html" id="light_black5">Ohio, US</a>
+    </div>
+  </header>
+   <main>
+  <div class="tracontainer">  
+    <div class="mySlides">
+        <div class="numbertext">1 / 5</div>
+        <img class='travel1' src="images/IMG_1684.JPG" alt='travel31' style="width:100%">
+    </div>
+    <div class="mySlides">
+        <div class="numbertext">2 / 5</div>
+        <img class='travel1'src="images/IMG_1690.JPG" alt='travel32' style="width:100%">
+    </div>  
+    <div class="mySlides">
+        <div class="numbertext">3 / 5</div>
+        <img class='travel1' src="images/IMG_1737.JPG" alt='travel33' style="width:100%">
+    </div>      
+    <div class="mySlides">
+        <div class="numbertext">4 / 5</div>
+        <img class='travel1' src="images/IMG_1732.JPG" alt='travel34' style="width:100%">
+    </div>  
+    <div class="mySlides">
+        <div class="numbertext">5 / 5</div>
+        <img class='travel1' src="images/IMG_1709.JPG" alt='travel35' style="width:100%">
+    </div>     
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>  
+    <div class="caption-container">
+        <p id="caption"></p>
+    </div>  
+    <div class="row">
+        <div class="column">
+            <img class="demo cursor" src="images/IMG_1684.JPG" style="width:100%; height:220px" onclick="currentSlide(1)" alt="Tahquamenon Falls">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/IMG_1690.JPG" style="width:100%; height:220px" onclick="currentSlide(2)" alt="Tahquamenon Falls">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/IMG_1737.JPG" style="width:100%; height:220px" onclick="currentSlide(3)" alt="Ferry Trip">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/IMG_1732.JPG" style="width:100%; height:220px" onclick="currentSlide(4)" alt="Mackinac Island">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="images/IMG_1709.JPG" style="width:100%; height:220px" onclick="currentSlide(5)" alt="Mackinac Island">
+        </div>    
+    </div>
+  </div>
+    </main>
+</body>
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+</html>
